@@ -1,0 +1,40 @@
+{
+  "name": "gumbear",
+  "version": "1.0.1",
+  "description": "🐻 GumBear Tunnel — Expose your local services to the internet",
+  "main": "src/tunnel-client.js",
+  "bin": {
+    "gumbear": "./bin/cli.js"
+  },
+  "scripts": {
+    "start": "node bin/cli.js",
+    "build": "npx pkg . --targets node18-linux-x64,node18-macos-x64,node18-win-x64 --output dist/gumbear",
+    "build:linux": "npx pkg . --targets node18-linux-x64 --output dist/gumbear-linux",
+    "build:mac": "npx pkg . --targets node18-macos-x64 --output dist/gumbear-macos",
+    "build:win": "npx pkg . --targets node18-win-x64 --output dist/gumbear-win.exe"
+  },
+  "pkg": {
+    "scripts": [
+      "src/**/*.js"
+    ],
+    "assets": [],
+    "outputPath": "dist"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "ora": "^5.4.1"
+  },
+  "keywords": [
+    "tunnel",
+    "ngrok",
+    "expose",
+    "localhost",
+    "proxy",
+    "gumbear"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "license": "MIT"
+}
